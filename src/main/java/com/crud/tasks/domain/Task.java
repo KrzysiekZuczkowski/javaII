@@ -7,9 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-@NoArgsConstructor
-@RequiredArgsConstructor
 @Getter
+@NoArgsConstructor
 @AllArgsConstructor
 @Entity(name = "tasks")
 public class Task {
@@ -18,11 +17,9 @@ public class Task {
     @GeneratedValue
     private Long id;
 
-    @NonNull
     @Column(name = "name")
     private String title;
 
-    @NonNull
     @Column(name = "description")
     private String content;
 }

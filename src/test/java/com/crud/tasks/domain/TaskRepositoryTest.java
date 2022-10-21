@@ -1,5 +1,6 @@
 package com.crud.tasks.domain;
 
+import com.crud.tasks.mapper.TaskMapper;
 import com.crud.tasks.repository.TaskRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,17 +16,24 @@ public class TaskRepositoryTest {
     @Autowired
     private TaskRepository taskRepository;
 
+    @Autowired
+    private TaskMapper taskMapper;
+
     @Test
     void taskRepositorySaveTest() {
         //Given
-        Task task = new Task("name", "dscription");
+        TaskDto taskDto = new TaskDto(1L, "name", "dscription");
 
         //When
-        taskRepository.save(task);
+        Task savedTask = taskRepository.save(taskMapper.mapToTask(taskDto));
 
         //Then
-        Long id = task.getId();
+        Long id = savedTask.getId();
+        System.out.println("Task Id " + id);
         Optional<Task> readTask = taskRepository.findById(id);
         assertTrue(readTask.isPresent());
+
+        //CleanUp
+        taskRepository.deleteById(id);
     }
 }
