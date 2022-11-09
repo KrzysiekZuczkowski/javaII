@@ -1,7 +1,6 @@
 package com.crud.tasks.service;
 
 import com.crud.tasks.domain.Mail;
-import lombok.Builder;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.mail.MailException;
@@ -11,7 +10,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
-@Builder
 @Slf4j
 @RequiredArgsConstructor
 @Service
