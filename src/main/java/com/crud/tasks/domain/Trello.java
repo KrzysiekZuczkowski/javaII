@@ -1,8 +1,6 @@
 package com.crud.tasks.domain;
 
-import lombok.Data;
-
-@Data
+//@Data
 public class Trello {
 
     private int board;
