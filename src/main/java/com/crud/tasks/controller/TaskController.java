@@ -5,7 +5,6 @@ import com.crud.tasks.domain.TaskDto;
 import com.crud.tasks.mapper.TaskMapper;
 import com.crud.tasks.service.DbService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +16,6 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("/v1/tasks")
 public class TaskController {
-
 
     private final DbService service;
     private final TaskMapper taskMapper;
